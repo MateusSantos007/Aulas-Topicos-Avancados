@@ -1,14 +1,6 @@
 <?php
-// PHP Data Objects(PDO) Sample Code:
-try {
-    $conn = new PDO("sqlsrv:server = tcp:{nome do seu servidor}; Database = {nome do seu banco};TrustServerCertificate=false", "{nome do seu usuario}", "{sua senha}");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
+    include "conexao.php";
+    
     $sql = "SELECT nome, endereco, cidade, telefone FROM Clientes";
     $stmt = $conn->query($sql);
 ?>
@@ -70,3 +62,4 @@ catch (PDOException $e) {
 </body>
 
 </html>
+
