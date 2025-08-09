@@ -1,7 +1,7 @@
 <?php
 // PHP Data Objects(PDO) Sample Code:
 try {
-    $conn = new PDO("sqlsrv:server = tcp:mateussantos.database.windows.net,1433; Database = mateussantos;TrustServerCertificate=false", "mateus", "M1a2t3e4u5s6");
+    $conn = new PDO("sqlsrv:server = tcp:{nome do seu servidor}; Database = {nome do seu banco};TrustServerCertificate=false", "{nome do seu usuario}", "{sua senha}");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
@@ -68,4 +68,5 @@ catch (PDOException $e) {
         <?php endwhile; ?>
     </table>
 </body>
+
 </html>
